@@ -1,0 +1,24 @@
+{
+  "name": "svindlblod",
+  "version": "1.0.0",
+  "description": "pakki til að fá html út úr markdown",
+  "main": "index.js",
+  "scripts": {
+    "help": "marked --help",
+    "gen": "marked -o t-101.html -i t-101.md && prettier --write ./**/*.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ofurtumi/svindlblod.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ofurtumi/svindlblod/issues"
+  },
+  "homepage": "https://github.com/ofurtumi/svindlblod#readme",
+  "dependencies": {
+    "marked": "^4.0.6",
+    "prettier": "^2.5.1"
+  }
+}
