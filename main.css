@@ -4,11 +4,19 @@ html {
   font-size: 16px;
 }
 
-body {
+main {
   max-width: 1000px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+}
+
+h1::after,h1::before {
+  content: " -- ";
 }
 
 h2 {
@@ -50,13 +58,7 @@ pre {
   line-height: 1.2em;
 }
 
-@page {
-  margin: 0 !important;
-}
-
 @media print {
-
-
   html {
     margin: 0;
     padding: 0;
@@ -64,10 +66,14 @@ pre {
     font-size: 12px;
   }
 
-  body {
+  main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1em;
+  }
+
+  header {
+    display: none;
   }
 
   p, td {
