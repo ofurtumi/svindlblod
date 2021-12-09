@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "pakki til að fá html út úr markdown",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "help": "marked --help",
-    "gen": "marked -o t-101.html -i t-101.md --gfm && prettier --write ./**/*.html"
+    "gen": "node script.js && prettier --write ./**/*.html"
   },
   "repository": {
     "type": "git",

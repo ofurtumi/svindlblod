@@ -4,11 +4,17 @@ html {
   font-size: 16px;
 }
 
-body {
+main {
   max-width: 1000px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+}
+
+footer {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 h1 {
@@ -66,13 +72,13 @@ pre {
     font-size: 12px;
   }
 
-  body {
+  main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1em;
   }
 
-  header {
+  header, footer {
     display: none;
   }
 
