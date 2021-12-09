@@ -66,6 +66,5 @@ rl.question("Hvaða skrá á að breyta: ", function (file) {
         console.log("Skrif tókust: " + file + " > " + filenameHTML);
       });
     rl.close();
-    prettier(filenameHTML)
 });
 
