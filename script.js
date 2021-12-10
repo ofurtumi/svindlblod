@@ -52,11 +52,17 @@ rl.question("Hvaða skrá á að breyta: ", function (file) {
     for (let i = 1; i < n-1; i++) {
         marr[i] += "</div><div>";
     }
-    marr[n-1] += "</div>"
+    marr[n-1] += "</div>";
 
     // setur fylkið aftur saman og bætir öllu svo inn í lokaoutput
-    marr = marr.join("<h2")
-    lokaOutput += marr;
+    marr = marr.join("<h2");
+
+    let ass = marr.split("<hr>");
+    ass[1] = '<div class="index">' + ass[1] + '</div>';
+
+    ass = ass.join("");
+
+    lokaOutput += ass;
     lokaOutput += fasturFotur;
 
     // skrifar út skrána í tilheyrandi html skrá

@@ -64,6 +64,22 @@ pre {
   line-height: 1.2em;
 }
 
+ul {
+  list-style: none;
+}
+
+li::before {
+  content: "- ";
+}
+
+.index {
+  grid-column: span 2;
+}
+.index ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 @media print {
   html {
     margin: 0;
@@ -93,5 +109,13 @@ pre {
   
   tr {
     border-bottom: 1px solid black;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  h3 {
+    margin: 0;
   }
 }
