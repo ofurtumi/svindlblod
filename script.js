@@ -91,7 +91,7 @@ function updateIndex(file) {
     
     if (!buildIndex.includes(filename)) {
         let BIMain = buildIndex.split("</ul>");
-        BIMain[0] += '<li><a href="./'+ filenameHTML + '">Glósur fyrir '+ filename +'</a></li>';
+        BIMain[0] += '<li><a href="./builds/'+ filenameHTML + '">Glósur fyrir '+ filename +'</a></li>';
         BIMain = BIMain.join('</ul>');
         BIMain = prettier.format(BIMain,{parser: "html", tabWidth: 4});
 
