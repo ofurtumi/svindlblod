@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "help": "marked --help",
-    "gen": "node script.js && prettier --write ./**/*.html"
+    "gen": "node script.js"
   },
   "repository": {
     "type": "git",
