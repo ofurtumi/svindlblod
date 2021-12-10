@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="is">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="twitter:card" content="description" />
+        <meta name="twitter:creator" content="@tumi_tigur" />
+        <meta name="twitter:title" content="glósur" />
+        <meta
+            name="twitter:description"
+            content="svindlmiði fyrir próf, hvaða próf? veit ekki, stendur á síðunni"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/main.css" />
+        <title>t-101</title>
+    </head>
+    <body>
+        <header><h1 id="töl-101">töl-101</h1></header>
+        <main>
+            <div>
+                <h2 id="helstu-math-föll">helstu Math föll</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>fall</th>
+                            <th>útkoma</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>.abs(a)</td>
+                            <td>skilar algildi</td>
+                        </tr>
+                        <tr>
+                            <td>.min(a,b)/max(a,b)</td>
+                            <td>skila stærra/minna gildinu</td>
+                        </tr>
+                        <tr>
+                            <td>.exp(a)</td>
+                            <td>skilar e í veldi a</td>
+                        </tr>
+                        <tr>
+                            <td>.pow(a,b)</td>
+                            <td>skilar a í veldi b</td>
+                        </tr>
+                        <tr>
+                            <td>.random()</td>
+                            <td>skilar random tölu frá og með 0 að 1</td>
+                        </tr>
+                        <tr>
+                            <td>.sqrt(a)</td>
+                            <td>skilar rót af a</td>
+                        </tr>
+                        <tr>
+                            <td>---</td>
+                            <td>---</td>
+                        </tr>
+                        <tr>
+                            <td>Math fastar</td>
+                            <td>ca. gildi</td>
+                        </tr>
+                        <tr>
+                            <td>.E</td>
+                            <td>2.178...</td>
+                        </tr>
+                        <tr>
+                            <td>.PI</td>
+                            <td>3.141...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2 id="hentug-string-föll">hentug String föll</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>fall</th>
+                            <th>útkoma</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>length()</td>
+                            <td>skilar heiltölu með lengd strengs</td>
+                        </tr>
+                        <tr>
+                            <td>charAt(i)</td>
+                            <td>skilar <strong>char</strong> í indexinu</td>
+                        </tr>
+                        <tr>
+                            <td>substring(i, j)</td>
+                            <td>
+                                skilar streng <strong>frá og með</strong> i
+                                <strong>að</strong> j
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>contains(s)</td>
+                            <td>skilar bool um hvort strengur innihaldi s</td>
+                        </tr>
+                        <tr>
+                            <td>startsWith(s)</td>
+                            <td>skilar bool um hvort strengur byrji á s</td>
+                        </tr>
+                        <tr>
+                            <td>endsWith(s)</td>
+                            <td>skilar bool um hvort strengur endi á s</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2 id="casting">casting</h2>
+                <p>
+                    þegar verið er að casta, (int)3.14, passa að verið sé að
+                    casta öllu sem á við
+                </p>
+                <ul>
+                    <li>(int)10.25+7.98) == 17.98</li>
+                    <li>(int)10.25+(int)7.98) == 17</li>
+                    <li>(int)(10.25+7.98) == 18</li>
+                </ul>
+            </div>
+            <div>
+                <h2 id="tegundir-breyta-í-aðferðum">
+                    tegundir breyta í aðferðum
+                </h2>
+                <p>tegundirnar eru þrjár</p>
+                <ul>
+                    <li>
+                        viðfangsbreytur
+                        <ul>
+                            <li>e. parameters, koma með gildi inn í aðferð</li>
+                        </ul>
+                    </li>
+                    <li>
+                        staðværar breytur
+                        <ul>
+                            <li>
+                                e. local variables, breytur sem eru skilgreyndar
+                                inn í aðferð og eru því aðeins notaðar
+                                tímabundið
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        tilviksbreytur
+                        <ul>
+                            <li>
+                                e. instance variables, eru til í klasanum öllum
+                                nema í static aðferðum
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2 id="hækkunlækkun-breyta">hækkun/lækkun breyta</h2>
+                <p>innanlínu breytivirkjar, ++ og -- eru pain, látum i = 5</p>
+                <ul>
+                    <li>
+                        System.out.printf(&quot;i fyrir hækkun: %d, i eftir
+                        hækkun: %d&quot;,i++,i)
+                        <ul>
+                            <li>
+                                þetta skilar: i fyrir hækkun: 5, i eftir hækkun
+                                6
+                            </li>
+                            <li>
+                                i skilar gildinu 5 og hækkar svo því ++ er eftir
+                                i
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        System.out.printf(&quot;i fyrir hækkun: %d, i eftir
+                        hækkun: %d&quot;,i,++i)
+                        <ul>
+                            <li>
+                                þetta skilar því sama, vegna þess að hér er ++ á
+                                undan i
+                            </li>
+                        </ul>
+                    </li>
+                    <li>þetta virkar svo alveg eins með --</li>
+                </ul>
+            </div>
+            <div>
+                <h2 id="printf">printf</h2>
+                <p>printf er lúmskur djöfull en kósý þegar notaður vel</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>tags</th>
+                            <th>meining</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>%d</td>
+                            <td>skiptir út fyrir <em>int</em></td>
+                        </tr>
+                        <tr>
+                            <td>%5d</td>
+                            <td>
+                                <strong>%d</strong> nema
+                                <em>heildarbreidd</em> er <em>5</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>%f</td>
+                            <td>
+                                skiptir út fyrir <em>float</em> eða
+                                <em>double</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>%.3f</td>
+                            <td>
+                                <strong>%f</strong> nema notar bara
+                                <em>3 aukastafi</em>, og
+                                <em><strong>námundar þann síðasta</strong></em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>%4.3f</td>
+                            <td>
+                                <strong>%.3f</strong> nema
+                                <em>heildarbreidd</em> tölunnar er <em>4</em>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>%s</td>
+                            <td>skiptir út fyrir <em>streng</em></td>
+                        </tr>
+                        <tr>
+                            <td>%3s</td>
+                            <td>
+                                <em>strengur</em> með <em>heildarbreidd</em> 3
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2 id="almenn-stærðfræði">almenn stærðfræði</h2>
+                <p>
+                    það er ekki reiknað alveg í þeirri röð sem búast mætti við
+                    en gott að hafa á bak við eyrað er:
+                    <strong>ef x*y/z*n þá er það jafnt og ((x*y)/z)*n</strong>
+                </p>
+            </div>
+            <div>
+                <h2 id="redirection">redirection</h2>
+                <p>
+                    notað til að beina útkomu úr skrá yfir í aðra skrá eða til
+                    þess að taka inn inntak úr skrá fyrir forrit
+                </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>cases</th>
+                            <th>meining</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>x.java &gt; y.txt</td>
+                            <td>tekur útkomuna úr x og skrifar það inn í y</td>
+                        </tr>
+                        <tr>
+                            <td>x.java &lt; y.txt</td>
+                            <td>tekur texta á staðalinntaki úr y og inn í x</td>
+                        </tr>
+                        <tr>
+                            <td>x.java &#124; y.java</td>
+                            <td>keyrir x og sendir útkomu yfir í y</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2 id="ternary-ritháttur">ternary ritháttur</h2>
+                <p>það er hægt að skrifa if setningar á fleiri hætti en bara</p>
+                <pre><code>if(condition) {
+    function()
+}
+</code></pre>
+                <p>ternary er in line if setning og er rituð með</p>
+                <pre><code>type foo = condition ? true : false;
+</code></pre>
+            </div>
+            <div>
+                <h2 id="switch-ritháttur">switch ritháttur</h2>
+                <pre><code>switch (key) {
+    case value:
+        function();
+        break;
+
+    default:
+        break;
+}
+</code></pre>
+                <p>
+                    <em>ath:</em> það er hægt að nota mörg case fyrir eitt
+                    function, þá er því bara bætt neðan við það function sem til
+                    er
+                </p>
+            </div>
+            <div>
+                <h2 id="scanner">scanner</h2>
+                <p>Scanner my beloved baby boy, syntax fyrir scanner væri:</p>
+                <pre><code>import java.util.Scanner;
+Scanner s = new Scanner(System.in);
+</code></pre>
+                <p>ef vinna á með texta nota þá:</p>
+                <pre><code>new Scanner(System.in,StandardCharsets.UTF_8);
+</code></pre>
+                <p>og ef vinna á með kommutölur bæta neðan við</p>
+                <pre><code>s.useLocale(Locale.US);
+</code></pre>
+                <p>til að fá ótilgreindan fjölda af gögnum inn, nota</p>
+                <pre><code>while(s.hasNext());
+</code></pre>
+            </div>
+            <div>
+                <h2 id="skipulag-falla">skipulag falla</h2>
+                <pre><code>public static double sqrt (double count) {
+    double tens = count * 1000;
+    return tens;
+}
+</code></pre>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>identifier</th>
+                            <th>heiti</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>public</td>
+                            <td>signature</td>
+                        </tr>
+                        <tr>
+                            <td>sqrt</td>
+                            <td>method name</td>
+                        </tr>
+                        <tr>
+                            <td>count</td>
+                            <td>argument variable</td>
+                        </tr>
+                        <tr>
+                            <td>tens</td>
+                            <td>local variable</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="index">undefined</div>
+        </main>
+        <footer>
+            hægt er að finna allan kóða á
+            <a href="https://github.com/ofurtumi/svindlblod">github</a>
+        </footer>
+    </body>
+</html>
