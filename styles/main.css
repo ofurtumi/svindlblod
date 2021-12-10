@@ -83,8 +83,6 @@ li::before {
 }
 .index ul {
   display: grid;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(22, 1em);
 }
 
 .index strong {
