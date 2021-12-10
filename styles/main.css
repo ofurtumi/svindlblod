@@ -11,7 +11,13 @@ main {
   margin: 0 auto;
 }
 
-footer {
+.heim {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.git-linkur {
   position: absolute;
   top: 10px;
   right: 10px;

@@ -23,7 +23,8 @@ let fasturHaus = `<!DOCTYPE html>
 
 const fasturFotur = `</main>
 <footer>
-    hægt er að finna allan kóða á <a href="https://github.com/ofurtumi/svindlblod">github</a>
+    <div class="heim"><a href="../">til baka</a></div>
+    <div class="git-linkur">hægt er að finna allan kóða á <a href="https://github.com/ofurtumi/svindlblod">github</a></div>
 </footer>
 </body>
 </html>`;
@@ -87,7 +88,7 @@ function addHtmlFile(file) {
 function updateIndex(file) {
     let filename = file.substring(0,file.length-3);
     let filenameHTML = filename+ ".html"
-    let buildIndex = fs.readFileSync("./builds/index.html").toString();
+    let buildIndex = fs.readFileSync("index.html").toString();
     
     if (!buildIndex.includes(filename)) {
         let BIMain = buildIndex.split("</ul>");
