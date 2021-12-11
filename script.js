@@ -103,3 +103,12 @@ function updateIndex(file) {
         });
     }
 }
+
+function erLatex (skjal) {
+    const regex = /\$.+?\$/g;
+    let latexStrengir = skjal.match(regex)
+    for (let i = 0; i < latexStrengir.length; i++) {
+        const element = array[i];
+        
+    }
+}
