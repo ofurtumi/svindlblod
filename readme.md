@@ -28,4 +28,5 @@ ef þú af einhverjum ástæðum vilt nota þetta til þess að skrifa þínar e
 - það er hægt að nota inline latex stærðfræði formúlur
     - til þess að þær birtist rétt í bæði md og html þarf að hafa þær innan dollaramerkja
     - dæmi \$f(x)=\frac{y^2}{9}\$ myndi birtast sem $f(x)=\frac{y^2}{9}$
+        - greinilega ekki á github samt :/
 ---

@@ -2,7 +2,7 @@ import { createRequire } from "module";
 const require = createRequire(import.meta.url);
 import { marked } from "marked";
 import * as readline from 'node:readline';
-import { stdin as input, stdout as output } from 'process';
+import { exit, stdin as input, stdout as output } from 'process';
 import * as fs from "node:fs";
 const prettier = require("prettier");
 const katex = require("katex");
@@ -49,7 +49,12 @@ function addHtmlFile(file) {
     lokaOutput += fasturHaus;
 
     // aðeins að html-a markdownið meira
-    let skra = fs.readFileSync("./markdown/" + file).toString();
+    try {
+        let skra = fs.readFileSync("./markdown/" + file).toString();
+    } catch (error) {
+        console.log("Ehv ekki rétt við skráarnafnið, reyndu aftur")
+        exit();
+    }
     let m = marked.parse(skra);
     m = m.replace("<h1","<header><h1");
     m = m.replace("</h1>","</h1></header><main>");
@@ -69,7 +74,6 @@ function addHtmlFile(file) {
 
     let listar = marr.split("<hr>");
     listar[1] = '</div><div class="index">' + listar[1];
-    console.log(listar[1])
     listar[1] = listar[1].replace('"index">\n</div><div>','"index">')
     // listar[1] = listar[1].replace("></div>",">")
 
