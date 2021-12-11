@@ -5,6 +5,7 @@ import * as readline from 'node:readline';
 import { stdin as input, stdout as output } from 'process';
 import * as fs from "node:fs";
 const prettier = require("prettier");
+const katex = require("katex");
 
 let fasturHaus = `<!DOCTYPE html>
 <html lang="is">
@@ -66,12 +67,14 @@ function addHtmlFile(file) {
     // setur fylkið aftur saman og bætir öllu svo inn í lokaoutput
     marr = marr.join("<h2");
 
-    let ass = marr.split("<hr>");
-    ass[1] = '<div class="index">' + ass[1] + '</div>';
+    let listar = marr.split("<hr>");
+    listar[1] = '<div class="index">' + listar[1] + '</div>';
 
-    ass = ass.join("");
+    listar = listar.join("");
 
-    lokaOutput += ass;
+    let heild = erLatex(listar);
+
+    lokaOutput += heild;
     lokaOutput += fasturFotur;
     lokaOutput = prettier.format(lokaOutput,{parser: "html", tabWidth: 4});
 
@@ -104,11 +107,22 @@ function updateIndex(file) {
     }
 }
 
+/**
+ * tekur inn allt 
+ * @param { string } skjal 
+ * @returns 
+ */
 function erLatex (skjal) {
+    let allt = skjal
     const regex = /\$.+?\$/g;
-    let latexStrengir = skjal.match(regex)
+    let latexStrengir = allt.match(regex)
+    // console.log(latexStrengir)
     for (let i = 0; i < latexStrengir.length; i++) {
-        const element = array[i];
-        
+        let n = latexStrengir[i].length-1;
+        let baraMath = latexStrengir[i].substring(1,n)
+        allt = allt.replace(latexStrengir[i],katex.renderToString(baraMath,{
+            output: "mathml"
+        }));
     }
+    return allt
 }
