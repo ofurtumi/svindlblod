@@ -72,6 +72,7 @@ pre {
 
 ul {
   list-style: none;
+  padding-inline-start: 0;
 }
 
 li::before {
@@ -81,8 +82,10 @@ li::before {
 .index {
   grid-column: span 2;
 }
+
 .index ul {
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .index strong {
