@@ -68,7 +68,10 @@ function addHtmlFile(file) {
     marr = marr.join("<h2");
 
     let listar = marr.split("<hr>");
-    listar[1] = '<div class="index">' + listar[1] + '</div>';
+    listar[1] = '</div><div class="index">' + listar[1];
+    console.log(listar[1])
+    listar[1] = listar[1].replace('"index">\n</div><div>','"index">')
+    // listar[1] = listar[1].replace("></div>",">")
 
     listar = listar.join("");
 
