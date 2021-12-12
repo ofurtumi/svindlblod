@@ -23,6 +23,8 @@ main {
 
 p {
   padding: 2em;
+  text-align: center;
+  word-break: break-all;
 }
 
 footer {
