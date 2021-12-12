@@ -1,35 +1,9 @@
 # töl-104
 
-## tvíhlutanet
-**muna** net er tvíhlutanet ef hægt er að lita alla hnúta netsins með einum af tveimur litum þar sem nágrannar hafa ekki sama litinn, gott fyrir hringnet
-**passa líka** ef það er hægt að finna $C_3$ net inn í neti þá er það ekki tvíhlutanet
+## index fyrir glósur á prófinu
+hægt að finna líka hálfklárað glósublað á 
 
-## net týpur
-- tómt net
-    * net sem inniheldur **hvorki** *hnúta* **né** **leggi**
-- núllnet
-    * net sem inniheldur enga leggi
-- fullskipuð net, $K_n$
-    * allir hnútar tengjast með einum legg
-- hringnet, $C_n$
-    * allir hnútar, $v_n$, tengjast *systkinum sínum*, $v_{n-1}$ og $v_{n+1}$
-- ofurteningar, $Q_n$
-    * hafa $2^n$ hnúta þar sem hver hnútur tengist clone af sjálfum sér úr $Q_{n-1}$
-
-## euler og hamilton
-euler vegir og rásir vilja snerta alla leggi
-- rás ef amk tveir hnútar og allir hnútar hafa slétt stig
-- vegur ef nákvæmlega tveir hnútar hafa odda stig
-hamilton vegir og rásir vilja snerta alla hnúta
-- rás ef fjöldi hnúta $n\ge 3$ og stig allra amk. $\frac{n}{2}$
-
-## möskvaformúlan
-$r=e-v+2$ r: möskvar, e: leggir, v: hnútar
-
-## de. morgan
-$\lnot(p\land q)\equiv\lnot p\lor\lnot q$ og $\lnot(p\lor q)\equiv\lnot p\land\lnot q$
-- **ÓS:** *Jón er eldri en átján ára eða hann er í skóla*
-- **S:** *Jón er ekki eldri en 18 ára og hann er ekki í skóla*
+    ../t-104.html
 
 ***
 ## index fyrir glósurnar

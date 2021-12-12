@@ -21,6 +21,10 @@ main {
   height: 100%;
 }
 
+p {
+  padding: 2em;
+}
+
 footer {
   position: absolute;
   top: 10px;
