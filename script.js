@@ -27,6 +27,7 @@ const fasturFotur = `</main>
     <div class="heim"><a href="../">til baka</a></div>
     <div class="git-linkur">hægt er að finna allan kóða á <a href="https://github.com/ofurtumi/svindlblod">github</a></div>
 </footer>
+<script src="./scripts/invert.js"></script>
 </body>
 </html>`;
 
@@ -68,14 +69,16 @@ function addHtmlFile(file) {
     // setur fylkið aftur saman og bætir öllu svo inn í lokaoutput
     marr = marr.join("<h2");
 
-    let listar = marr.split("<hr>");
-    listar[1] = '</div><div class="index">' + listar[1];
-    listar[1] = listar[1].replace('"index">\n</div><div>','"index">')
-    // listar[1] = listar[1].replace("></div>",">")
+    if (marr.includes("<hr>")) {
+        marr = marr.split("<hr>");
+        marr[1] = '</div><div class="index">' + marr[1];
+        marr[1] = marr[1].replace('"index">\n</div><div>','"index">')
+        // listar[1] = listar[1].replace("></div>",">")
+    
+        marr = marr.join("");
+    }
 
-    listar = listar.join("");
-
-    let heild = erLatex(listar);
+    let heild = erLatex(marr);
 
     lokaOutput += heild;
     lokaOutput += fasturFotur;
@@ -140,4 +143,8 @@ function erLatex (skjal) {
         }
     }
     return allt
+}
+
+function addInvertScript() {
+
 }

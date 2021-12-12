@@ -4,11 +4,23 @@ html {
   font-size: 16px;
 }
 
+body {
+  position: relative;;
+}
+
 main {
   max-width: 1000px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .heim {
@@ -98,6 +110,28 @@ li::before {
 
 .index h2 {
   text-align: center;
+}
+
+.invert {
+  background-color: black;
+  filter: invert(1);
+}
+
+button {
+  font-family: monospace;
+  font-size: 1em;
+  border: 3px solid black;
+  background-color: white;
+  border-radius: 7px;
+  width: 2em;
+  height: 2em;
+  transition: 0.15s;
+  cursor: pointer;
+}
+
+button:hover, button:focus-visible {
+  background-color: black;
+  color: white;
 }
 
 @media print {
