@@ -75,6 +75,10 @@ ul {
   padding-inline-start: 0;
 }
 
+ul ul {
+  padding-inline-start: 1em;
+}
+
 li::before {
   content: "- ";
 }

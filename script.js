@@ -48,13 +48,9 @@ function addHtmlFile(file) {
 
     lokaOutput += fasturHaus;
 
+    let skra = getContent(file);
     // aðeins að html-a markdownið meira
-    try {
-        let skra = fs.readFileSync("./markdown/" + file).toString();
-    } catch (error) {
-        console.log("Ehv ekki rétt við skráarnafnið, reyndu aftur")
-        exit();
-    }
+    
     let m = marked.parse(skra);
     m = m.replace("<h1","<header><h1");
     m = m.replace("</h1>","</h1></header><main>");
@@ -95,6 +91,16 @@ function addHtmlFile(file) {
 
 }
 
+function getContent (file) {
+    try {
+        let skra = fs.readFileSync("./markdown/" + file).toString();
+        return skra
+    } catch (error) {
+        console.log("Ehv ekki rétt við skráarnafnið, reyndu aftur")
+        exit();
+    }
+}
+
 function updateIndex(file) {
     let filename = file.substring(0,file.length-3);
     let filenameHTML = filename+ ".html"
@@ -107,7 +113,7 @@ function updateIndex(file) {
         BIMain = prettier.format(BIMain,{parser: "html", tabWidth: 4});
 
     
-        fs.writeFile("./builds/index.html", BIMain, function (err) {
+        fs.writeFile("./index.html", BIMain, function (err) {
             if (err) return console.log(err);
             console.log("Index.html uppfært!");
         });
@@ -122,14 +128,16 @@ function updateIndex(file) {
 function erLatex (skjal) {
     let allt = skjal
     const regex = /\$.+?\$/g;
-    let latexStrengir = allt.match(regex)
-    // console.log(latexStrengir)
-    for (let i = 0; i < latexStrengir.length; i++) {
-        let n = latexStrengir[i].length-1;
-        let baraMath = latexStrengir[i].substring(1,n)
-        allt = allt.replace(latexStrengir[i],katex.renderToString(baraMath,{
-            output: "mathml"
-        }));
+    if (allt.match(regex)) {
+        let latexStrengir = allt.match(regex)
+        // console.log(latexStrengir)
+        for (let i = 0; i < latexStrengir.length; i++) {
+            let n = latexStrengir[i].length-1;
+            let baraMath = latexStrengir[i].substring(1,n)
+            allt = allt.replace(latexStrengir[i],katex.renderToString(baraMath,{
+                output: "mathml"
+            }));
+        }
     }
     return allt
 }
