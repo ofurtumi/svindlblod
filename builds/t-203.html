@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="is">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="twitter:card" content="description" />
+        <meta name="twitter:creator" content="@tumi_tigur" />
+        <meta name="twitter:title" content="glósur" />
+        <meta
+            name="twitter:description"
+            content="svindlmiði fyrir próf, hvaða próf? veit ekki, stendur á síðunni"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../styles/main.css" />
+        <title>t-203</title>
+    </head>
+    <body>
+        <header><h1 id="tölvunarfræði-tvö">tölvunarfræði tvö</h1></header>
+        <main>
+            <div>
+                <h2 id="efni-til-prófs">efni til prófs</h2>
+                <ul>
+                    <li>
+                        ALLT EFNI TEKIÐ FYRIR , nema það sem tekið fram
+                        sérstaklega er ekki
+                    </li>
+                    <li>
+                        staðpróf á pappír
+                        <ul>
+                            <li>smávæginlegar syntaxvillur skipta ekki máli</li>
+                        </ul>
+                    </li>
+                    <li>1x a4 blað, báðar hliðar sem hjálpargögn</li>
+                    <li>
+                        það verður algs4 API sem er gefin
+                        <ul>
+                            <li>
+                                athuga á prófið frá 2019, síðasta síðan er með
+                                apann
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2 id="kafla-yfirlit">kafla yfirlit</h2>
+                <ul>
+                    <li>kaflar 1.1-1.5 í Algs</li>
+                    <li>kaflar 2.1-2.4 í Algs</li>
+                    <li>
+                        kaflar 3.1-3.4 í Algs
+                        <ul>
+                            <li>(ekki delete í BST)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        kaflar 4.1-4.4 í Algs
+                        <ul>
+                            <li>
+                                (Symbolgraph ekki til prófs, ekki Shortest paths
+                                in general edge weighted)
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        Sannanir í kafla 4 um að reiknirit
+                        <strong>VIRKI</strong> eru ekki til prófs en sönnun um
+                        að reiknirit taki tíma eru
+                    </li>
+                    <li>Kafli 5.4</li>
+                </ul>
+            </div>
+            <div>
+                <h2 id="svindl">svindl</h2>
+                <ul>
+                    <li>
+                        hafa töflu yfir tímaflækjur
+                        <ul>
+                            <li>allra grunnaðgerða í java</li>
+                            <li>reiknirita sem farið hefur yfir</li>
+                            <li>aðgerða á gagnagrindum</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2 id="1-kafli">1. kafli</h2>
+                <ul>
+                    <li>tímaflækja grunnaðgerða</li>
+                    <li>binary search</li>
+                    <li>
+                        <blockquote>
+                            <p>
+                                weighted quick union<br /><img
+                                    src="/markdown/imgs/uf-performance.png"
+                                    alt="UF performance"
+                                />
+                            </p>
+                        </blockquote>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2 id="2-kafli">2. kafli</h2>
+                <ul>
+                    <li>
+                        selection sort
+                        <ul>
+                            <li>[n²/2, n]</li>
+                        </ul>
+                    </li>
+                    <li>
+                        insertion sort
+                        <ul>
+                            <li>
+                                heldur utan um það sem búið er að sorta og færir
+                                stærri hluta fram um einn og
+                                &quot;insertar&quot; svo minni hlutnum
+                            </li>
+                            <li>best: [N-1, 0]</li>
+                            <li>avg: [N²/4, N²/4]</li>
+                            <li>worst: [N²/2, N²/2]</li>
+                        </ul>
+                    </li>
+                    <li>
+                        shellsort
+                        <ul>
+                            <li>
+                                byggir ofan á insertion sort, byrjar að sortera
+                                í hópum og vinnur sig svo niður
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        mergesort
+                        <ul>
+                            <li>
+                                sorterar fylki í bútum og mergar svo í stærra
+                                fylki, notar recursion
+                            </li>
+                            <li>O(N log(N)) space(O(N))</li>
+                        </ul>
+                    </li>
+                    <li>
+                        quicksort
+                        <ul>
+                            <li>
+                                velur stak og notar það sem viðmiðsstak til að
+                                skipta fylki í tvo hópa, stærra en VMS og minna
+                                en VMS
+                            </li>
+                            <li>O(N log(N))</li>
+                        </ul>
+                    </li>
+                    <li>
+                        heapsort
+                        <ul>
+                            <li>
+                                notar heap (priority queue) til að sortera og
+                                fjarlægir svo alltaf minnsta stakk
+                            </li>
+                            <li>O(2n log(n))</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2 id="3-kafli">3. kafli</h2>
+                <ul>
+                    <li>
+                        sequential search
+                        <ul>
+                            <li>
+                                notar symbol table af linked list hnútum sem
+                                innihalda lykil og gildi, skannar svo í gegnum
+                                alla hnútana
+                            </li>
+                            <li>Besta tilfelli O(1) versta O(N)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        binary search symbol table
+                        <ul>
+                            <li>
+                                notar tvö fylki, annað fyrir lykla hitt fyrir
+                                gildi
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        binary search tree
+                        <ul>
+                            <li>
+                                þetta klassíska, hver hnútur hefur undir sér til
+                                vinstri gildi sem eru minni en hann sjálfur og
+                                til hægri stærri en hann sjálfur
+                            </li>
+                            <li>
+                                þarf ekki að vera &quot;balanced&quot; þ.e. c.a.
+                                jöfn þyngd báðu megin
+                            </li>
+                            <li>
+                                notar í versta falli O(n) aðgerðir en almennt
+                                O(log(n))
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        red black bst
+                        <ul>
+                            <li>
+                                notar rauða linka til að jafna tréð, hæðin fyrir
+                                n hnúta má ekki vera meiri en
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><mn>2</mn><mi>l</mi><mi>g</mi
+                                                ><mo stretchy="false">(</mo
+                                                ><mi>n</mi
+                                                ><mo stretchy="false"
+                                                    >)</mo
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >2lg(n)</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </li>
+                            <li>
+                                að finna hnút í tré með n hnúta tekur almennt
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><mn>1.0</mn><mi>l</mi><mi>g</mi
+                                                ><mo stretchy="false">(</mo
+                                                ><mi>n</mi
+                                                ><mo stretchy="false"
+                                                    >)</mo
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >1.0lg(n)</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        seperate chaining hash
+                        <ul>
+                            <li>
+                                býr array af stærð M þar sem stök eru linked
+                                listar til að takast á við árekstra
+                            </li>
+                            <li>
+                                ef tveir hlutir eru með sama hash fær fyrri
+                                hluturinn seinni hlutinn sem Next í Linked lista
+                            </li>
+                            <li>
+                                fjöldi samanburða fyrir SCH með M lista og N
+                                lykla vex í hlutfalli við N/M
+                            </li>
+                            <li>í langflestum tilfellum er N/M næstum því 1</li>
+                        </ul>
+                    </li>
+                    <li>
+                        linear probing hash
+                        <ul>
+                            <li>
+                                býr til array af stærð M þar sem hvert stak
+                                inniheldur bara einn lykil
+                            </li>
+                            <li>
+                                ef það verður árekstur fer nýrri hluturinn áfram
+                                í fylkinu þangað til hann lendir á tómu svæði
+                            </li>
+                            <li>
+                                tímaflækjan er svipuð fyrir það og SCH nema
+                                aðeins hægara og flóknara
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2 id="4-kafli">4. kafli</h2>
+                <ul>
+                    <li>
+                        dfs
+                        <ul>
+                            <li>
+                                notar recursion til að fara skipulagt í gegn um
+                                alla hnúta og leggi í neti
+                            </li>
+                            <li>
+                                þegar það fer framhjá hnút, merkir hann sem
+                                &quot;visited&quot;
+                            </li>
+                            <li>
+                                auðvelt að modda til að finna leið á milli hnúta
+                            </li>
+                            <li>
+                                hentar betur fyrir &quot;löng&quot; net, þ.e. ef
+                                maður er að leita að ehv lang frá rótinni
+                            </li>
+                            <li>notar stack</li>
+                        </ul>
+                    </li>
+                    <li>
+                        bfs
+                        <ul>
+                            <li>
+                                gott til að finna stystu leið á milli hnúta í
+                                grafi þar sem leggir hafa ekki þyngd
+                            </li>
+                            <li>
+                                finnur fyrst leið að hnút í gegn um einn legg
+                                svo tvo osfr
+                            </li>
+                            <li>
+                                notar queue til að gera þetta, setur rót þar,
+                                poppar henni og setur aðliggjandi í queue og
+                                merkir &quot;visited&quot;
+                            </li>
+                            <li>
+                                hentar betur fyrir &quot;stutt&quot; net þ.e.
+                                þegar maður er að leita að hnút nálægt rótinni
+                            </li>
+                            <li>hægar en dfs</li>
+                        </ul>
+                    </li>
+                    <li>directed dfs</li>
+                    <li>
+                        topological order
+                        <ul>
+                            <li>eiginlega sort</li>
+                            <li>
+                                tekur inn stefnt net og raðar hnútum í beina röð
+                                þar sem allir hnútar benda bara á hnúta sem eru
+                                á eftir sér í röðinni
+                            </li>
+                            <li>
+                                aðeins hægt að mynda þessa röð ef það eru engir
+                                hringir í grafinu, þ.e. ef graf er DAG
+                                <img
+                                    src="/markdown/imgs/topological.png"
+                                    alt="topological sort"
+                                />
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        prim
+                        <ul>
+                            <li>
+                                fyrir hvert skref bætir öllum aðliggjandi
+                                leggjum, með upplýsingum frá hvaða hnút og að
+                                hvaða hnút, í Min-PQ og velur þaðan legg með
+                                minnsta weight til að finna næsta hnút
+                            </li>
+                            <li>
+                                ef leggur liggur á milli núþegar tengdra hnúta
+                                er sá leggur tekinn af Min-PQ
+                            </li>
+                            <li>endurtekur á næta hnút</li>
+                        </ul>
+                    </li>
+                    <li>
+                        kruskall
+                        <ul>
+                            <li>
+                                hefur yfirlit yfir þyngd allra leggja velur þar
+                                alltaf minnsta legg sem, ef tengdur, myndar ekki
+                                hring með hnútunum sem tengdir voru á undan sér
+                            </li>
+                            <li>
+                                notar Min-PQ og Union-Find til þess að finna
+                                leggi sem mynda hringi
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        djikstra
+                        <ul>
+                            <li>bruh</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2 id="tímar---sorting">tímar - sorting</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>reiknirit</th>
+                            <th>P</th>
+                            <th>S</th>
+                            <th>best</th>
+                            <th>avg</th>
+                            <th>worst</th>
+                            <th>viðbót</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>selection</td>
+                            <td>x</td>
+                            <td>-</td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><msup
+                                                    ><mi>n</mi><mn>2</mn></msup
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n^2</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><msup
+                                                    ><mi>n</mi><mn>2</mn></msup
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n^2</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><msup
+                                                    ><mi>n</mi><mn>2</mn></msup
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n^2</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>lélegt</td>
+                        </tr>
+                        <tr>
+                            <td>insertion</td>
+                            <td>x</td>
+                            <td>x</td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow><mi>n</mi></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><msup
+                                                    ><mi>n</mi><mn>2</mn></msup
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n^2</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><msup
+                                                    ><mi>n</mi><mn>2</mn></msup
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n^2</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>nota fyrir lítil hálf sortuð</td>
+                        </tr>
+                        <tr>
+                            <td>merge</td>
+                            <td>-</td>
+                            <td>x</td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><mi>n</mi><mo>∗</mo><mi>l</mi
+                                                ><mi>o</mi><mi>g</mi
+                                                ><mo stretchy="false">(</mo
+                                                ><mi>n</mi
+                                                ><mo stretchy="false"
+                                                    >)</mo
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n*log(n)</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><mi>n</mi><mo>∗</mo><mi>l</mi
+                                                ><mi>o</mi><mi>g</mi
+                                                ><mo stretchy="false">(</mo
+                                                ><mi>n</mi
+                                                ><mo stretchy="false"
+                                                    >)</mo
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n*log(n)</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><mi>n</mi><mo>∗</mo><mi>l</mi
+                                                ><mi>o</mi><mi>g</mi
+                                                ><mo stretchy="false">(</mo
+                                                ><mi>n</mi
+                                                ><mo stretchy="false"
+                                                    >)</mo
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n*log(n)</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>alltaf n*log(n)</td>
+                        </tr>
+                        <tr>
+                            <td>quick</td>
+                            <td>x</td>
+                            <td>-</td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><mi>n</mi><mo>∗</mo><mi>l</mi
+                                                ><mi>o</mi><mi>g</mi
+                                                ><mo stretchy="false">(</mo
+                                                ><mi>n</mi
+                                                ><mo stretchy="false"
+                                                    >)</mo
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n*log(n)</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><mi>n</mi><mo>∗</mo><mi>l</mi
+                                                ><mi>n</mi
+                                                ><mo stretchy="false">(</mo
+                                                ><mi>n</mi
+                                                ><mo stretchy="false"
+                                                    >)</mo
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n*ln(n)</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><msup
+                                                    ><mi>n</mi><mn>2</mn></msup
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n^2</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>nánast alltaf n*log(n)</td>
+                        </tr>
+                        <tr>
+                            <td>heap</td>
+                            <td>x</td>
+                            <td>-</td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow><mi>n</mi></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><mi>n</mi><mo>∗</mo><mi>l</mi
+                                                ><mi>o</mi><mi>g</mi
+                                                ><mo stretchy="false">(</mo
+                                                ><mi>n</mi
+                                                ><mo stretchy="false"
+                                                    >)</mo
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n*log(n)</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>
+                                <span class="katex"
+                                    ><math
+                                        xmlns="http://www.w3.org/1998/Math/MathML"
+                                        ><semantics
+                                            ><mrow
+                                                ><mi>n</mi><mo>∗</mo><mi>l</mi
+                                                ><mi>o</mi><mi>g</mi
+                                                ><mo stretchy="false">(</mo
+                                                ><mi>n</mi
+                                                ><mo stretchy="false"
+                                                    >)</mo
+                                                ></mrow
+                                            ><annotation
+                                                encoding="application/x-tex"
+                                                >n*log(n)</annotation
+                                            ></semantics
+                                        ></math
+                                    ></span
+                                >
+                            </td>
+                            <td>alltaf allavega n*log(n)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2 id="tímar---gagnasöfnin">tímar - gagnasöfnin</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>gagnasafn</th>
+                            <th>search<br />(worst)</th>
+                            <th>in<br />(worst)</th>
+                            <th>del<br />(worst)</th>
+                            <th>search<br />(avg)</th>
+                            <th>in<br />(avg)</th>
+                            <th>del<br />(avg)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>sequential</td>
+                            <td>n</td>
+                            <td>n</td>
+                            <td>n</td>
+                            <td>n</td>
+                            <td>n</td>
+                            <td>n</td>
+                        </tr>
+                        <tr>
+                            <td>binary search</td>
+                            <td>log(n)</td>
+                            <td>n</td>
+                            <td>n</td>
+                            <td>log(n)</td>
+                            <td>log(n)</td>
+                            <td>log(n)</td>
+                        </tr>
+                        <tr>
+                            <td>BST</td>
+                            <td>n</td>
+                            <td>n</td>
+                            <td>n</td>
+                            <td>log(n)</td>
+                            <td>log(n)</td>
+                            <td>sqrt(n)</td>
+                        </tr>
+                        <tr>
+                            <td>red-black-BST</td>
+                            <td>log(n)</td>
+                            <td>log(n)</td>
+                            <td>log(n)</td>
+                            <td>log(n)</td>
+                            <td>log(n)</td>
+                            <td>log(n)</td>
+                        </tr>
+                        <tr>
+                            <td>HT - SH</td>
+                            <td>n</td>
+                            <td>n</td>
+                            <td>n</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>HT - LP</td>
+                            <td>n</td>
+                            <td>n</td>
+                            <td>n</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2 id="tímar-allskonar-netashit">tímar allskonar netashit</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>vandamál</th>
+                            <th>reiknirit</th>
+                            <th>tími</th>
+                            <th>pláss</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>path</td>
+                            <td>DFS</td>
+                            <td>E + V</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>shortest path (fewest edges)</td>
+                            <td>BFS</td>
+                            <td>E + V</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>cycle</td>
+                            <td>DFS</td>
+                            <td>E + V</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>directed path</td>
+                            <td>DFS</td>
+                            <td>E + V</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>shortest directed path (fewest edges)</td>
+                            <td>BFS</td>
+                            <td>E + V</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>directed cycle</td>
+                            <td>DFS</td>
+                            <td>E + V</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>topological sort</td>
+                            <td>DFS</td>
+                            <td>E + V</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>bipartiteness / odd cycle</td>
+                            <td>DFS</td>
+                            <td>E + V</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>connected components</td>
+                            <td>DFS</td>
+                            <td>E + V</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>Eulerian cycle</td>
+                            <td>DFS</td>
+                            <td>E + V</td>
+                            <td>E + V</td>
+                        </tr>
+                        <tr>
+                            <td>directed Eulerian cycle</td>
+                            <td>DFS</td>
+                            <td>E + V</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>transitive closure</td>
+                            <td>DFS</td>
+                            <td>V (E + V)</td>
+                            <td>V 2</td>
+                        </tr>
+                        <tr>
+                            <td>minimum spanning tree</td>
+                            <td>Kruskal</td>
+                            <td>E log E</td>
+                            <td>E + V</td>
+                        </tr>
+                        <tr>
+                            <td>minimum spanning tree</td>
+                            <td>Prim</td>
+                            <td>E log V</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>shortest paths (nonnegative weights)</td>
+                            <td>Dijkstra</td>
+                            <td>E log V</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>shortest paths (no negative cycles)</td>
+                            <td>Bellman–Ford</td>
+                            <td>V (V + E)</td>
+                            <td>V</td>
+                        </tr>
+                        <tr>
+                            <td>shortest paths (no cycles)</td>
+                            <td>topological sort</td>
+                            <td>V + E</td>
+                            <td>V</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+        <footer>
+            <div class="heim"><a href="../">til baka</a></div>
+            <div class="git-linkur">
+                hægt er að finna allan kóða á
+                <a href="https://github.com/ofurtumi/svindlblod">github</a>
+            </div>
+        </footer>
+        <script src="./scripts/invert.js"></script>
+    </body>
+</html>
